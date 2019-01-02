@@ -1,0 +1,12 @@
+.classment {
+    padding: 0.2rem;
+    width: 2em;
+    height: 2rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.table {
+    width: 50rem;
+    margin: auto;
+}

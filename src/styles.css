@@ -1,1 +1,11 @@
+
 /* You can add global styles to this file, and also import other style files */
+.mt-11{
+    margin-top: 11rem;
+}
+.mt-8{
+    margin-top: 8rem;
+}
+.card-width{
+    width: 50rem;
+}

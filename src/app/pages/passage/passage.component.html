@@ -1,0 +1,46 @@
+<div class="header text-white bg-secondary">
+    <div class="pt-2 pb-2 mx-3">
+        <div class="d-flex">
+            <div class="w-100">
+                <div class="h2">{{quizService.quiz.NAME}}</div>
+            </div>
+            <div class="w-100 text-center">
+                <span class="h3">{{currentIndex+1}}/{{QUESTIONS.length}} ({{quizService.note}})</span>
+            </div>
+            <div class="w-100">
+                <span class="h3 pull-right">{{timeLeft}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mt-4 text-white">
+    <div class="mx-auto text-center">
+        <h1>{{currentQuestion.QUESTION}}</h1>
+    </div>
+    <div class="text-center">
+        <div class="d-flex mx-auto">
+            <div class="ml-auto">
+                <div *ngFor="let answer of currentQuestion.ANSWERS; let i = index">
+                    <div (click)="onClickAnswer(i)" [ngClass]="answer.check? 'bg-secondary': 'bg-danger'" class="answer-card pt-1 pb-1 px-1" *ngIf="i%2==0">
+                        <b>{{answer.ANSWER}}</b>
+                        <input type="radio" name="answer" [(ngModel)]="answer.check" hidden />
+                    </div>
+                </div>
+            </div>
+            <div class="mr-auto">
+                <div *ngFor="let answer of currentQuestion.ANSWERS; let i = index">
+                    <div  (click)="onClickAnswer(i)"  [ngClass]="answer.check? 'bg-secondary': 'bg-danger'" class="answer-card pt-1 pb-1 px-1" *ngIf="i%2!=0">
+                        <b>{{answer.ANSWER}}</b>
+                        <input type="radio" name="answer" [(ngModel)]="answer.check" hidden />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 text-center">
+        <button *ngIf='isAnswered' class="btn btn-warning btn-next" (click)="next()">
+            <span *ngIf="currentIndex < QUESTIONS.length-1">Suivant</span>
+            <span *ngIf="currentIndex == QUESTIONS.length-1">Terminer</span>
+        </button>
+    </div>
+</div>

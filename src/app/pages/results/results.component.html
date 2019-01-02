@@ -1,0 +1,48 @@
+<div class="text-white">
+    <div class="text-center">
+        <div class="h1">{{quizService.quiz.NAME}}</div>
+        <p>{{quizService.quiz.DESCRIPTION}}</p>
+        <div class="h1 mt-2">Les résultats</div>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Classement
+                    </th>
+                    <th>
+                        Note
+                    </th>
+                    <th>
+                        Nom
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let score of quizService.scores; let i = index">
+                    <td>
+                        <div class=" bg-secondary mr-2 classment">{{i+1}}</div>
+                    </td>
+                    <td>
+                        <div class="mr-2 btn btn-success">{{score.MARK}}</div>
+                    </td>
+                    <td>
+                        <div class="h4">{{score.NAME}}</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--
+    <div class="mt-4">
+        <div *ngFor="let score of quizService.scores; let i = index">
+            <div class="d-flex mx-2 mt-1 mb-1">
+                <div class=" bg-secondary mr-2 classment ml-auto">{{i+1}}</div>
+                <div class="mr-2 btn btn-success">{{score.MARK}}</div>
+                <div class="h4 mr-auto">{{score.NAME}}</div>
+            </div>
+        </div>
+    </div>
+    -->
+</div>
